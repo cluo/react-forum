@@ -28,11 +28,11 @@ app.use(koaEtag());
 app.use(koaStatic(app.staticPath));
 app.use(koaBody());
 app.use(koaOverride('_method'));
-app.use(koaSession({ 
-  store: koaRedis({ 
+app.use(koaSession({
+  store: koaRedis({
          host: config.redis.host,
          port: config.redis.port
-       }) 
+       })
 }));
 app.use(koaHandlebars.middleware({
   viewPath: __dirname + '/views',
@@ -41,7 +41,7 @@ app.use(koaHandlebars.middleware({
   compileDebug: true
 }));
 
-// Load 
+// Load
 require('./controllers')(app); // Load controllers
 require('./services')(app); // Load services
 

@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.use(koaMount('/api',  function * () {
     this.error(999, 'api not found');
   }));
-  
+
   // not found
   // app.use(function *notFound(next) {
   //   if (this.status == 404) {

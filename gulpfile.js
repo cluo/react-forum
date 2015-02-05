@@ -46,12 +46,12 @@ gulp.task('watch', function () {
 
 gulp.task('nodemon', function () {
   if(!nodemon_instance){ // Start server
-    nodemon_instance = nodemon({ 
-      script:"app.js", 
+    nodemon_instance = nodemon({
+      script:"app.js",
       nodeArgs: ["--harmony", "--debug"],
-      env: { "NODE_ENV": "dev" }, 
-      watch: "__manual_watch__",  
-      ext: "__manual_watch__"  
+      env: { "NODE_ENV": "dev" },
+      watch: "__manual_watch__",
+      ext: "__manual_watch__"
     });
   }else { // Restart server
     nodemon_instance.emit("restart");
