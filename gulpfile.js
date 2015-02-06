@@ -21,7 +21,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy', function () {
-  return gulp.src(['static/src/images/**/*'])
+  return gulp.src(['static/src/images/**/*', 'static/src/favicon.ico'])
     .pipe(copy('static/dist/', {prefix: 2}));
 });
 
