@@ -1,7 +1,7 @@
 require.config({
     baseUrl: '/dist/js/',
     paths: {
-        'jquery': '/bower/jQuery/dist/jquery.min',
+        'jquery': '/bower/jquery/dist/jquery.min',
         'react': '/bower/react/react',
         'react-router': '/bower/react-router/dist/react-router',
         'react-bootstrap': '/bower/react-bootstrap'
