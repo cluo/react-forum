@@ -1,5 +1,4 @@
-
-  define([
+define([
   'jquery',
   'react',
   'react-bootstrap/Navbar',

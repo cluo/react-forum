@@ -26,7 +26,7 @@ gulp.task('copy', function () {
 });
 
 gulp.task('less-compile', function () {
-  return gulp.src('static/src/less/**/*.less')
+  return gulp.src('static/src/less/app.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))

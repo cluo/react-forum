@@ -17,11 +17,7 @@ module.exports = function(app) {
   }));
 
   // not found
-  // app.use(function *notFound(next) {
-  //   if (this.status == 404) {
-  //     this.body = 'requested but no route matches.';
-  //   } else {
-  //     yield next;
-  //   }
-  // });
+  app.use(function *(next) {
+    yield this.render('pc/index', {'title': 'Reactjs Koa Bootstrap'}, true);
+  });
 };
