@@ -11,14 +11,13 @@ define([
 ) {
 
   var Route = ReactRouter.Route;
+  var DefaultRoute = ReactRouter.DefaultRoute;
 
   return {
     start: function(App, container) {
-      routes = (
-        <Route>
-          <Route handler={App} >
-            <Route name='about' path='/about' handler={AboutPage} />
-          </Route>
+      var routes = (
+        <Route name="app" path="/" handler={App} >
+          <Route name='about' path='/about' handler={AboutPage} />
         </Route>
       );
 

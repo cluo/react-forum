@@ -1,16 +1,17 @@
 'use strict';
 
-var gulp         = require('gulp');
-var gulpSequence = require('gulp-sequence');
-var clean        = require('gulp-clean');
-var copy         = require('gulp-copy');
-var less         = require('gulp-less');
-var react        = require('gulp-react');
-var nodemon      = require("gulp-nodemon");
+var gulp          = require('gulp');
+var gulpSequence  = require('gulp-sequence');
+var clean         = require('gulp-clean');
+var copy          = require('gulp-copy');
+var less          = require('gulp-less');
+var react         = require('gulp-react');
+var to5           = require('gulp-6to5');
+var nodemon       = require('gulp-nodemon');
 
-var path         = require('path');
+var path          = require('path');
 
-var version      = 'v' + require('./package.json').version;
+var version       = 'v' + require('./package.json').version;
 // Single instance
 var nodemon_instance;
 
@@ -35,6 +36,7 @@ gulp.task('less-compile', function () {
 
 gulp.task('jsx-compile', function () {
     return gulp.src('static/src/jsx/**/*.jsx')
+        .pipe(to5())
         .pipe(react())
         .pipe(gulp.dest('static/dist/js'));
 });

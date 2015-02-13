@@ -3,7 +3,7 @@ require.config({
     baseUrl: '/dist/js/',
     paths: {
         'jquery': '/bower/jquery/dist/jquery.min',
-        'react': '/bower/react/react',
+        'react': '/bower/react/react-with-addons',
         'react-router': '/bower/react-router/dist/react-router',
         'react-bootstrap': '/bower/react-bootstrap',
         // utils
@@ -14,14 +14,8 @@ require.config({
         'pages': './pages/'
     },
     shim: {
-        'react': {
-          exports: 'React'
-        },
         'react-router': {
-          deps: ['react']
-        },
-        'react-bootstrap': {
-          deps: ['react']
+          deps: ['react', 'utils/router-helper']
         }
     }
 });
@@ -29,9 +23,9 @@ require.config({
 // app start
 require([
   'react',
-  'components/navigation',
+  'components/Navigation/Navigation',
   './router'
-], function(
+], function (
   React,
   Navigation,
   router
@@ -40,7 +34,7 @@ require([
   var container = document.getElementById('page-container');
   // app
   var App = React.createClass({
-    render: function () {
+    render: function(){
       return (
         <Navigation />
       );

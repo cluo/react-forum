@@ -42,8 +42,9 @@ app.use(koaHandlebars.middleware({
 }));
 
 // Load
-require('./controllers')(app); // Load controllers
+require('./global')(); // Load global data
 require('./services')(app); // Load services
+require('./controllers')(app); // Load controllers
 
 // Start server
 app.listen(app.port, function() {
