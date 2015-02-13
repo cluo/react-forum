@@ -4,15 +4,15 @@ define([
    React
 ) {
 
-  var About = React.createClass({
+  var Login = React.createClass({
     render: function() {
       return (
         <div class="row">
-          <h2>关于我们</h2>
+          <h2>登陆</h2>
         </div>
       );
     }
   });
 
-  return About;
+  return Login;
 });

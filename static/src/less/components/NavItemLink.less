@@ -1,0 +1,23 @@
+.navbar-nav > li  {
+
+  > a {
+    &,
+    &:visited {
+      color: #aaa;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &.active > a {
+    &,
+    &:hover,
+    &:visited {
+      color: #fafafa;
+      border-bottom: 3px solid #cc7a6f;
+      background: #333;
+    }
+  }
+}

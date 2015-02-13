@@ -22,25 +22,36 @@ require.config({
 
 // app start
 require([
+  'jquery',
   'react',
   'components/Navigation/Navigation',
+  'react-router',
   './router'
 ], function (
+  $,
   React,
   Navigation,
+  ReactRouter,
   router
 ) {
 
-  var container = document.getElementById('page-container');
+  var RouteHandler = ReactRouter.RouteHandler;
+
   // app
   var App = React.createClass({
     render: function(){
       return (
-        <Navigation />
+        <div id="page-container">
+          <Navigation />
+          <div id="main-container" className="container">
+            <RouteHandler />
+          </div>
+        </div>
       );
     }
   });
+
   // start router
-  router.start(App, container);
+  router.start(App, $('body').get(0));
 
 });
