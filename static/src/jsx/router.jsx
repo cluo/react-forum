@@ -6,6 +6,7 @@ define([
   'pages/about',
   'pages/login',
   'pages/register',
+  'pages/post-detail',
 ], function(
    React,
    RouterHelper,
@@ -14,7 +15,8 @@ define([
    HomePage,
    AboutPage,
    LoginPage,
-   RegisterPage
+   RegisterPage,
+   PostDetailPage
 ) {
 
   var Route = ReactRouter.Route;
@@ -24,10 +26,10 @@ define([
     start: function(App, container) {
       var routes = (
         <Route name="app" path="/" handler={App} >
-          <Route name="about" path="/about" handler={AboutPage} />
-          <Route name="login" path="/login" handler={LoginPage} />
-          <Route name="register" path="/register" handler={RegisterPage} />
-
+          <Route name="about" path="about" handler={AboutPage} />
+          <Route name="login" path="login" handler={LoginPage} />
+          <Route name="register" path="register" handler={RegisterPage} />
+          <Route name="post" path="post/:postId" handler={PostDetailPage} />
           <DefaultRoute handler={HomePage} />
         </Route>
       );

@@ -1,7 +1,9 @@
 define([
-  'react'
+  'react',
+  'components/PostList/PostList'
 ], function(
-   React
+   React,
+   PostList
 ) {
 
   var Home = React.createClass({
@@ -11,7 +13,7 @@ define([
           <h2>首页</h2>
 
           <div className="col-md-9" role="main">
-          main
+            <PostList />
           </div>
 
           <div className="col-md-3" role="complementary">
