@@ -1,5 +1,5 @@
-###  react-forum
-forum for reactjs.cn which use koa and reactjs
+###  React-forum
+为reactjs.cn制作的论坛系统(使用Koa和Reactjs)
 
 ### 依赖
   - [Koa](http://koajs.com/) (version >= 0.16.0)
@@ -9,6 +9,7 @@ forum for reactjs.cn which use koa and reactjs
 
 ### 安装
 1、安装Koa (http://koajs.com/)
+
 2、
 ```sh
 $ sudo npm install // ps: may need -g
