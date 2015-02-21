@@ -7,7 +7,7 @@ define([
   var About = React.createClass({
     render: function() {
       return (
-        <div class="row">
+        <div className="row">
           <h2>关于我们</h2>
         </div>
       );

@@ -13,11 +13,11 @@ module.exports = function(app) {
   // app.use(apiExtend());
   app.use(koaMount('/api',  api.middleware()));
   app.use(koaMount('/api',  function * () {
-    this.error(999, 'api not found');
+    this.body = {status: 0, msg: 'api not found'};
   }));
 
   // not found
   app.use(function *(next) {
-    yield this.render('pc/index', {'title': 'Reactjs Koa Bootstrap'}, true);
+    yield this.render('pc/index', {'appTitle': global.appTitle}, true);
   });
 };

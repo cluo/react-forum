@@ -6,7 +6,6 @@ var clean         = require('gulp-clean');
 var copy          = require('gulp-copy');
 var less          = require('gulp-less');
 var react         = require('gulp-react');
-var to5           = require('gulp-6to5');
 var nodemon       = require('gulp-nodemon');
 
 var path          = require('path');
@@ -36,8 +35,7 @@ gulp.task('less-compile', function () {
 
 gulp.task('jsx-compile', function () {
     return gulp.src('static/src/jsx/**/*.jsx')
-        .pipe(to5())
-        .pipe(react())
+        .pipe(react({harmony: true}))
         .pipe(gulp.dest('static/dist/js'));
 });
 

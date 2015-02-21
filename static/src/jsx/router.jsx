@@ -21,6 +21,7 @@ define([
 
   var Route = ReactRouter.Route;
   var DefaultRoute = ReactRouter.DefaultRoute;
+  var NotFoundRoute = ReactRouter.NotFoundRoute;
 
   return {
     start: function(App, container) {
@@ -31,6 +32,7 @@ define([
           <Route name="register" path="register" handler={RegisterPage} />
           <Route name="post" path="post/:postId" handler={PostDetailPage} />
           <DefaultRoute handler={HomePage} />
+          <NotFoundRoute handler={HomePage}/>
         </Route>
       );
 

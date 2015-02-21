@@ -3,7 +3,7 @@ define([
   'react-router',
   'react-bootstrap/Navbar',
   'react-bootstrap/Nav',
-  './NavItemLink'
+  'components/libs/NavItemLink/NavItemLink'
 ], function(
    React,
    ReactRouter,
@@ -15,10 +15,10 @@ define([
   var Link = ReactRouter.Link;
   var RouteHandler = ReactRouter.RouteHandler;
 
-  var Navigation = React.createClass({
+  var Header = React.createClass({
     render: function() {
       return (
-        <Navbar>
+        <Navbar id="header">
           <Link className="navbar-brand" to="app">
             <img className="nav-logo" src="/dist/images/logo.svg" width="36" height="36"/>
             Reactjs 中文社区
@@ -33,5 +33,5 @@ define([
     }
   });
 
-  return Navigation;
+  return Header;
 });

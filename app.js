@@ -10,22 +10,19 @@ var koaBody       = require('koa-body');              // body
 var koaOverride   = require('koa-methodoverride');    // methodoverride
 var koaEtag       = require('koa-etag');              // etag
 var koaGzip       = require('koa-gzip');              // gzip
-var koaHandlebars = require("koa-hbs");               // handlebars
+var koaHandlebars = require('koa-hbs');               // handlebars
 
-var config = require('./config');
+require('./global')(__dirname); // Load data to global
 
-var app = koa();
-
-app.appName     = config.appName;
-app.port        = config.server.port;
-app.staticPath  = __dirname + config.staticPath;
+var config = global.config;
+var app    = koa();
 
 // Configurations
-app.use(koaFavicon(app.staticPath + '/dist/favicon.ico'));
+app.use(koaFavicon(config.staticPath + '/dist/favicon.ico'));
 app.use(koaLogger());
 app.use(koaGzip());
 app.use(koaEtag());
-app.use(koaStatic(app.staticPath));
+app.use(koaStatic(config.staticPath));
 app.use(koaBody());
 app.use(koaOverride('_method'));
 app.use(koaSession({
@@ -42,11 +39,10 @@ app.use(koaHandlebars.middleware({
 }));
 
 // Load
-require('./global')(); // Load global data
 require('./services')(app); // Load services
 require('./controllers')(app); // Load controllers
 
 // Start server
-app.listen(app.port, function() {
+app.listen(config.server.port, function() {
   console.log('Koa is listening to http://localhost:3000');
 });

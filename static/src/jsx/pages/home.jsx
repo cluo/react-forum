@@ -10,7 +10,6 @@ define([
     render: function() {
       return (
         <div className="row">
-          <h2>首页</h2>
 
           <div className="col-md-9" role="main">
             <PostList />
@@ -19,6 +18,7 @@ define([
           <div className="col-md-3" role="complementary">
           complementary
           </div>
+
         </div>
       );
     }

@@ -1,13 +1,11 @@
 define([
   'react',
   'react-router',
-  'react-bootstrap/NavItem',
-  './LinkMixin'
+  'react-bootstrap/NavItem'
 ], function(
    React,
    ReactRouter,
-   NavItem,
-   LinkMixin
+   NavItem
 ) {
 
   var classSet = React.addons.classSet;

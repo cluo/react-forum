@@ -24,14 +24,15 @@ define([
         to,
         params,
         query,
-        active} = this.props;
+        active,
+        ...props} = this.props;
 
       if (this.props.active === undefined) {
         active = this.isActive(to, params, query);
       }
 
       return (
-        <NavItem
+        <NavItem {...props}
           href={this.getHref()}
           active={active}
           onClick={this.handleRouteTo}

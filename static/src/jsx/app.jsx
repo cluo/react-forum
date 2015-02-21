@@ -3,14 +3,18 @@ require.config({
     baseUrl: '/dist/js/',
     paths: {
         'jquery': '/bower/jquery/dist/jquery.min',
+        'essage': '/bower/essage/src/essage',
         'react': '/bower/react/react-with-addons',
         'react-router': '/bower/react-router/dist/react-router',
         'react-bootstrap': '/bower/react-bootstrap',
-        // utils
+
+        'flux': '/bower/flux/dist/Flux',
+
         'utils': './utils/',
-        // components
         'components': './components/',
-        // pages
+        'dispatcher': './dispatcher/',
+        'actions': './actions/',
+        'stores': './stores/',
         'pages': './pages/'
     },
     shim: {
@@ -24,15 +28,17 @@ require.config({
 require([
   'jquery',
   'react',
-  'components/Navigation/Navigation',
   'react-router',
-  './router'
+  './router',
+  'components/Header/Header',
+  'components/Footer/Footer',
 ], function (
   $,
   React,
-  Navigation,
   ReactRouter,
-  router
+  router,
+  Header,
+  Footer
 ) {
 
   var RouteHandler = ReactRouter.RouteHandler;
@@ -42,10 +48,11 @@ require([
     render: function(){
       return (
         <div id="page-container">
-          <Navigation />
+          <Header />
           <div id="main-container" className="container">
             <RouteHandler />
           </div>
+          <Footer />
         </div>
       );
     }

@@ -22,7 +22,6 @@
   "homepage": "https://github.com/reactjs-cn/react-forum",
   "devDependencies": {
     "gulp": "^3.8.10",
-    "gulp-6to5": "^3.0.0",
     "gulp-clean": "^0.3.1",
     "gulp-copy": "0.0.2",
     "gulp-less": "^3.0.0",

@@ -7,7 +7,7 @@ define([
   var Login = React.createClass({
     render: function() {
       return (
-        <div class="row">
+        <div className="row">
           <h2>登陆</h2>
         </div>
       );
